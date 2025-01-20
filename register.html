@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        window.onload = function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const error = urlParams.get('error');
+            const errorMessage = document.getElementById('error-message');
+
+            if (error === 'username_exists') {
+                errorMessage.textContent = "Имя пользователя уже существует. Выберите другое.";
+                errorMessage.style.color = "red";
+            } else if (error === 'email_exists') {
+                errorMessage.textContent = "Email уже существует. Попробуйте другой.";
+                errorMessage.style.color = "red";
+            } else if (error === 'failed') {
+                errorMessage.textContent = "Ошибка регистрации. Попробуйте позже.";
+                errorMessage.style.color = "red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Регистрация</h1>
+    <p id="error-message"></p>
+    <form action="register.php" method="POST">
+        <label>Имя пользователя:</label>
+        <input type="text" name="username" required>
+        <label>Email:</label>
+        <input type="email" name="email" required>
+        <label>Пароль:</label>
+        <input type="password" name="password" required>
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+    <a href="login.html">Уже есть аккаунт? Войти</a>
+</body>
+</html>

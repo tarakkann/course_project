@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: 'Jost', sans-serif;
+    background-color: #FFF9EC;
+}
+
+header {
+    background-color: #033929;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 100px;
+    color: #FFF9EC; /* Цвет текста в заголовке */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.logo img {
+    height: 60px; /* Размер логотипа */
+}
+
+h1 {
+    font-size: 24px;
+    background-color: #FFF9EC; /* Фон текста заголовка */
+    color: #033929; /* Цвет текста */
+    padding: 10px 20px; /* Отступы для визуального эффекта */
+    border-radius: 10px; /* Закругление углов */
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+.main-button-link {
+    text-decoration: none;
+}
+
+.header-button {
+    background-color: #FFF9EC; /* Фон кнопки */
+    color: #033929; /* Цвет текста */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 35px; /* Закругление кнопки */
+}
+
+main {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    min-height: 960px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#map {
+    width: 900px;
+    height: 700px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для карты */
+    border-radius: 10px; /* Закругленные углы карты */
+}
+
+.tagline {
+    font-size: 64px; /* Увеличенный размер текста */
+    color: #033929;
+    font-weight: 700;
+    position: absolute;
+    top: 30%; /* Позиция текста */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+
+.main-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: absolute;
+    top: 45%; /* Кнопки под текстом */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.main-button {
+    background-color: #033929;
+    color: #FFF9EC;
+    border: none;
+    padding: 20px 40px; /* Увеличенные размеры кнопок */
+    cursor: pointer;
+    font-size: 24px; /* Увеличенный шрифт кнопок */
+    border-radius: 35px;
+}
+
+.dog-image img {
+    max-width: 50%;
+    height: auto;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+
+form {
+    background-color: white;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #033929;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #033929;
+}
+
+p {
+    color: green;
+    text-align: center;
+}
