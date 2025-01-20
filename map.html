@@ -9,6 +9,7 @@
     <script src="map.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <h1>Карта площадок для выгула собак</h1>
@@ -24,6 +25,27 @@
         </nav>
     </header>
     <main>
+        <div id="filters">
+            <label for="dog_type_filter">Тип собаки:</label>
+            <select id="dog_type_filter">
+                <option value="">Все</option>
+                <option value="small">Маленькая</option>
+                <option value="medium">Средняя</option>
+                <option value="large">Большая</option>
+            </select>
+        
+            <label for="rating_filter">Рейтинг:</label>
+            <select id="rating_filter">
+                <option value="">Все</option>
+                <option value="1-2">1-2</option>
+                <option value="3-4">3-4</option>
+                <option value="5">5</option>
+            </select>
+        
+            <button id="apply-filters-btn">Применить фильтры</button>
+        </div>
+        
+        
         <div id="map" style="width: 900px; height: 700px;"></div>
     </main>
     <footer>
@@ -31,4 +53,5 @@
     </footer>
 </body>
 </html>
+
 
