@@ -23,9 +23,30 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <div id="map" style="width: 900px; height: 700px;"></div>
-    </main>
+    <!-- Форма фильтрации -->
+    <form id="form">
+        <label for="dog-type">Тип собаки:</label>
+        <select id="dog-type" name="dog_type">
+            <option value="">Любой</option>
+            <option value="Маленькая">Маленькая</option>
+            <option value="Средняя">Средняя</option>
+            <option value="Большая">Большая</option>
+        </select>
+    
+        <label for="rating-range">Рейтинг:</label>
+        <select id="rating-range" name="rating_range">
+            <option value="">Любой</option>
+            <option value="1-2">1-2</option>
+            <option value="3-4">3-4</option>
+            <option value="5">5</option>
+        </select>
+    
+        <button type="button" onclick="filterParks()">Фильтровать</button>
+    </form>
+    
+
+    <div id="map" style="width: 900px; height: 700px;"></div>
+
     <footer>
         <p>© 2025 Веб-приложение для выгула собак. Все права защищены.</p>
     </footer>
