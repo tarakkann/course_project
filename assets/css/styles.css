@@ -137,13 +137,22 @@ main {
 }
 
 
+/* --- Styles exclusive to map.html --- */
+#mapcontent {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 20px;
+    gap: 20px; /* Расстояние между картой и формой */
+}
 
 #map {
-    width: 900px;
+    width: 60%; /* Занимает 60% ширины */
     height: 700px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для карты */
     border-radius: 10px; /* Закругленные углы карты */
 }
+
 
 .tagline {
     font-size: 110px; /* Keep font size */
