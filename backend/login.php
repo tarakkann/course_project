@@ -19,16 +19,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             session_start();
             $_SESSION['user_id'] = $user['user_id'];
             $_SESSION['username'] = $user['username'];
-            header("Location: profile.php");
+            header("Location:  /backend/profile.php");
             exit();
         } else {
             // Неверный пароль
-            header("Location: login.html?error=invalid_password");
+            header("Location: /frontend/login.html?error=invalid_password");
             exit();
         }
     } else {
         // Email не найден
-        header("Location: login.html?error=user_not_found");
+        header("Location:  /frontend/login.html?error=user_not_found");
         exit();
     }
 

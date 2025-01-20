@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
-        header("Location: register.html?error=username_exists");
+        header("Location:  /frontend/register.html?error=username_exists");
         exit();
     }
 
@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
-        header("Location: register.html?error=email_exists");
+        header("Location:  /frontend/register.html?error=email_exists");
         exit();
     }
 
@@ -38,10 +38,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($stmt->execute()) {
         session_start();
         $_SESSION['user_id'] = $conn->insert_id;
-        header("Location: profile.php");
+        header("Location:  /backend/profile.php");
         exit();
     } else {
-        header("Location: register.html?error=failed");
+        header("Location:  /frontend/register.html?error=failed");
         exit();
     }
 }

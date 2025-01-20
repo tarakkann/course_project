@@ -47,29 +47,49 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Профиль</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
+<style>
+    main {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+</style>
 <body>
-    <header id="main-header">
-        <nav>
-            <a href="logout.php"" class="main-button-link">
-                    <button class="header-button">Выйти</button>
-                </a> 
-                <a href="map.html" class="main-button-link">
-                    <button class="header-button">Карта</button>
-                </a>   
-        </nav>
+<header>
+        <div class="logo">
+            <img src="/assets/images/Logo.svg" alt="PetMap Logo"> <!-- Путь к логотипу -->
+        </div>
+        <div class="header-logo">
+            <h1>Профиль</h1>
+        </div>
+        <div class="header-buttons">
+            <a href="/frontend/map.html" class="main-button-link">
+                <button class="header-button">Карта</button>
+            </a>        
+            <a href="logout.php" class="main-button-link">
+                <button class="header-button">Выход</button>
+            </a>
+        </div>
     </header>
-    <main>
+
+    <main id="profile-page">
         <h1>Профиль</h1>
         <p>Добро пожаловать, <strong><?php echo htmlspecialchars($user['username']); ?></strong>!</p>
-        <form method="POST" action="profile.php">
+        <form id="profile-form" method="POST" action="profile.php">
             <label for="username">Имя пользователя:</label>
             <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($user['username']); ?>" required>
             <label for="email">Email:</label>

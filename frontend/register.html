@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
     <script>
         window.onload = function () {
             const urlParams = new URLSearchParams(window.location.search);
@@ -25,9 +25,24 @@
     </script>
 </head>
 <body>
-    <h1>Регистрация</h1>
+    <header>
+        <div class="logo">
+            <img src="/assets/images/Logo.svg" alt="PetMap Logo"> <!-- Путь к логотипу -->
+        </div>
+    <div class="header-logo">
+        <h1>Регистрация</h1>
+    </div>
+    <div class="header-buttons">
+        <a href="index.html" class="main-button-link">
+            <button class="header-button">Главная</button>
+        </a>        
+        <a href="login.html" class="main-button-link">
+            <button class="header-button">Вход</button>
+        </a>
+    </div>
+    </header>
     <p id="error-message"></p>
-    <form action="register.php" method="POST">
+    <form action="/backend/register.php" method="POST">
         <label>Имя пользователя:</label>
         <input type="text" name="username" required>
         <label>Email:</label>
@@ -36,6 +51,14 @@
         <input type="password" name="password" required>
         <button type="submit">Зарегистрироваться</button>
     </form>
-    <a href="login.html">Уже есть аккаунт? Войти</a>
+    <div class="register-link">
+        <a href="login.html" class="main-button-link">Уже есть аккаунт? Войти</a>
+    </div>
 </body>
+
+<footer>
+    PetMap © 2025. Все права защищены
+    С использование открытых данных :  <p><a href="https://data.mos.ru/opendata/2663?isDynamic=false">  Датасет</a></p>
+</footer>
+
 </html>
