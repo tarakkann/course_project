@@ -100,44 +100,4 @@ function init() {
             .catch(error => console.error('Ошибка загрузки данных о площадке:', error));
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-        const applyFiltersBtn = document.getElementById('apply-filters-btn');
-    
-        if (applyFiltersBtn) {
-            applyFiltersBtn.addEventListener('click', applyFilters);
-        }
-    });
-    
-    function applyFilters() {
-        const dogType = document.getElementById('dog_type_filter').value;
-        const rating = document.getElementById('rating_filter').value;
-    
-        fetch(`filter_parks.php?dog_type=${dogType}&rating=${rating}`)
-            .then(response => response.json())
-            .then(parks => {
-                myMap.geoObjects.removeAll(); // Очистка текущих объектов на карте
-                parks.forEach(park => {
-                    const placemark = new ymaps.Placemark(
-                        [park.latitude, park.longitude],
-                        {},
-                        { 
-                            iconLayout: 'default#image', 
-                            iconImageHref: '/images/island.png', 
-                            iconImageSize: [40, 40], 
-                            iconImageOffset: [-15, -42] 
-                        }
-                    );
-    
-                    placemark.events.add('click', () => {
-                        loadParkDetails(park.global_id, park.latitude, park.longitude);
-                    });
-    
-                    myMap.geoObjects.add(placemark);
-                });
-            })
-            .catch(error => console.error('Ошибка загрузки площадок:', error));
-    }
-    
-    
-    
 }
