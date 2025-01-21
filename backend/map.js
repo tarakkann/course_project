@@ -129,7 +129,7 @@ function loadParkDetails(parkId, latitude, longitude) {
 
 
     function handleSubmitReviewForm(event) {
-        event.preventDefault(); // Предотвращаем стандартное поведение формы
+        event.preventDefault(); 
     
         const form = event.target;
         const formData = new FormData(form);
@@ -142,7 +142,7 @@ function loadParkDetails(parkId, latitude, longitude) {
         .then(result => {
             if (result.success) {
                 alert('Отзыв успешно отправлен!');
-                form.reset(); // Сбрасываем форму
+                form.reset(); // сбрасываем форму
             } else {
                 alert(`Ошибка: ${result.error}`);
             }

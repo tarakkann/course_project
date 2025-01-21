@@ -20,15 +20,14 @@ $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     $park = $result->fetch_assoc();
 
-    // Проверка, если элементы - это строка, а не JSON, то разбиваем через запятую
+    // если элементы - это строка, а не JSON, то разбиваем через запятую
     $elements = null;
     if ($park['Elements']) {
-        // Применяем регулярное выражение для удаления скобок и разделяем строку на массив
-        $elements = preg_replace('/[\[\]]/', '', $park['Elements']); // Убираем квадратные скобки
-        $elements = preg_split('/,\s*/', $elements); // Разделяем строку по запятой и пробелу
+        //  регулярное выражение для удаления скобок и разделяем строку на массив
+        $elements = preg_replace('/[\[\]]/', '', $park['Elements']); // убираем квадратные скобки
+        $elements = preg_split('/,\s*/', $elements); 
     }
 
-    // Формирование ответа
     $response = [
         "id" => $park['global_id'],
         "address" => $park['Location'],

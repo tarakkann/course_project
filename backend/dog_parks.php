@@ -4,7 +4,6 @@ header('Content-Type: application/json');
 
 require_once 'db_connection.php';
 
-// Извлечение всех площадок с глобальным ID и координатами
 $query = "SELECT global_id, latitude, longitude FROM dog_parks WHERE latitude IS NOT NULL AND longitude IS NOT NULL";
 $result = $conn->query($query);
 

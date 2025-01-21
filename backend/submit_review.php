@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    http_response_code(403); // Доступ запрещен
+    http_response_code(403); 
     echo json_encode(['error' => 'Вы должны быть авторизованы, чтобы оставить отзыв.']);
     exit();
 }

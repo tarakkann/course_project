@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <body>
 <header>
         <div class="logo">
-            <img src="/assets/images/Logo.svg" alt="PetMap Logo"> <!-- Путь к логотипу -->
+            <img src="/assets/images/Logo.svg" alt="PetMap Logo"> 
         </div>
         <div class="header-logo">
             <h1>Профиль</h1>
