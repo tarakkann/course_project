@@ -88,20 +88,19 @@ function loadParkDetails(parkId, latitude, longitude) {
                 </div>
                 <div id="review-section">
                     <h4>Оставить отзыв</h4>
-                    <form id="review-form" action="/backend/submit_review.php" method="POST">
-                        <label for="dog_type">Тип собаки:</label>
-                        <select id="dog_type" name="dog_type">
-                            <option value="Маленькая">Маленькая</option>
-                            <option value="Средняя">Средняя</option>
-                            <option value="Большая">Большая</option>
-                        </select><br>
-                        <label for="rating">Оценка (1-5):</label>
-                        <input type="number" id="rating" name="rating" min="1" max="5" required><br>
-                        <label for="review_text">Отзыв:</label><br>
-                        <textarea id="review_text" name="review_text" rows="4" cols="50" required></textarea><br>
-                        <input type="hidden" id="park_id" name="park_id" value="${parkId}">
-                        <button type="submit">Отправить отзыв</button>
-                    </form>
+                    <form id="review-form" method="POST" onsubmit="handleSubmitReviewForm(event)">
+            <label for="dog_type">Тип собаки:</label>
+            <select id="dog_type" name="dog_type">
+                <option value="Маленькая">Маленькая</option>
+                <option value="Средняя">Средняя</option>
+                <option value="Большая">Большая</option>
+            </select><br>
+            <label for="rating">Оценка (1-5):</label>
+            <input type="number" id="rating" name="rating" min="1" max="5" required><br>
+            <label for="review_text">Отзыв:</label><br>
+            <textarea id="review_text" name="review_text" rows="4" cols="50" required></textarea><br>
+            <input type="hidden" id="park_id" name="park_id" value="${parkId}">
+            <button type="submit">Отправить отзыв</button></form>
                 </div>`;
 
             fetch(`/backend/get_reviews.php?id=${parkId}`)
@@ -126,30 +125,34 @@ function loadParkDetails(parkId, latitude, longitude) {
             myMap.balloon.open([latitude, longitude], content);
         })
         .catch(error => console.error('Ошибка загрузки данных о площадке:', error));
-}
+    }
+
+
+    function handleSubmitReviewForm(event) {
+        event.preventDefault(); // Предотвращаем стандартное поведение формы
+    
+        const form = event.target;
+        const formData = new FormData(form);
+    
+        fetch('/backend/submit_review.php', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(result => {
+            if (result.success) {
+                alert('Отзыв успешно отправлен!');
+                form.reset(); // Сбрасываем форму
+            } else {
+                alert(`Ошибка: ${result.error}`);
+            }
+        })
+        .catch(error => {
+            console.error('Ошибка отправки отзыва:', error);
+            alert('Произошла ошибка при отправке отзыва.');
+        });
+    }
+    
 
 ymaps.ready(init);
 
-document.addEventListener('DOMContentLoaded', function() {
-    const reviewForm = document.getElementById('review-form'); 
-    if (reviewForm) {
-        reviewForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const formData = new FormData(reviewForm);
-            fetch('/backend/submit_review.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.error) {
-                    alert(data.error);
-                } else {
-                    alert('Отзыв успешно добавлен!');
-                }
-            })
-            .catch(error => console.error('Ошибка:', error));
-        });
-    }
-    init(); 
-});
