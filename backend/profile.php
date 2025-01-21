@@ -97,5 +97,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <p style="color: red;"><?php echo $error; ?></p>
         <?php endif; ?>
     </main>
+    <footer>
+        PetMap © 2025. Все права защищены
+        С использование открытых данных :  <p><a href="https://data.mos.ru/opendata/2663?isDynamic=false">  Датасет</a></p>
+    </footer>
 </body>
 </html>
