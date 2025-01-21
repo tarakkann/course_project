@@ -1,4 +1,3 @@
-/* General reset and styles */
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap');
 
 * {
@@ -21,7 +20,7 @@ header {
     align-items: center;
     padding: 20px;
     height: 100px;
-    color: #FFF9EC; /* Цвет текста в заголовке */
+    color: #FFF9EC; 
 }
 
 .logo {
@@ -31,15 +30,15 @@ header {
 }
 
 .logo img {
-    height: 60px; /* Размер логотипа */
+    height: 60px;
 }
 
 h1 {
     font-size: 24px;
-    background-color: #FFF9EC; /* Фон текста заголовка */
-    color: #033929; /* Цвет текста */
-    padding: 10px 20px; /* Отступы для визуального эффекта */
-    border-radius: 10px; /* Закругление углов */
+    background-color: #FFF9EC;
+    color: #033929; 
+    padding: 10px 20px;
+    border-radius: 10px; 
     margin: 0;
 }
 
@@ -59,20 +58,20 @@ nav ul li {
 }
 
 .header-button {
-    background-color: #FFF9EC; /* Background color */
-    color: #033929; /* Text color */
+    background-color: #FFF9EC;
+    color: #033929; 
     border: 2px solid #FFF9EC;
-    padding: 12px 20px; /* Larger button size */
+    padding: 12px 20px;
     cursor: pointer;
-    font-size: 18px; /* Larger font size */
-    font-weight: 700; /* Bold font */
-    border-radius: 35px; /* Rounded corners */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    font-size: 18px; 
+    font-weight: 700; 
+    border-radius: 35px; 
+    transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
 .header-button:hover {
-    background-color: #033929; /* Green on hover */
-    color: #FFF9EC; /* White text on hover */
+    background-color: #033929;
+    color: #FFF9EC; 
     border: 2px solid #FFF9EC;
 }
 
@@ -96,12 +95,12 @@ main {
 
 #profile-form {
     background-color: white;
-    max-width: 400px; /* Установленная ширина формы */
-    margin: 0 auto; /* Центрирование формы */
+    max-width: 400px;
+    margin: 0 auto;
     padding: 20px;
     border: 1px solid #ddd;
-    border-radius: 5px; /* Скругленные углы формы */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Добавление тени */
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
 #profile-form label {
@@ -121,7 +120,7 @@ main {
 #profile-form button {
     width: 100%;
     padding: 10px;
-    background-color: #033929; /* Цвет кнопки */
+    background-color: #033929; 
     color: white;
     border: 2px solid #033929;
     border-radius: 5px;
@@ -131,36 +130,34 @@ main {
 }
 
 #profile-form button:hover {
-    background-color: #FFF9EC; /* Цвет кнопки при наведении */
-    color: #033929; /* Цвет текста при наведении */
+    background-color: #FFF9EC; 
+    color: #033929; 
     border: 2px solid #033929;
 }
 
 
-/* --- Styles exclusive to map.html --- */
 #mapcontent {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     margin: 20px;
-    gap: 20px; /* Расстояние между картой и формой */
+    gap: 20px; 
 }
 
 #map {
-    width: 60%; /* Занимает 60% ширины */
+    width: 60%; 
     height: 700px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для карты */
-    border-radius: 10px; /* Закругленные углы карты */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    border-radius: 10px; 
 }
 
-
 .tagline {
-    font-size: 110px; /* Keep font size */
-    font-weight: 800; /* Keep bold text */
+    font-size: 110px; 
+    font-weight: 800; 
     color: #033929;
     margin-bottom: 100px;
-    margin-left: -500px; /* Move further left */
-    line-height: 1.1; /* Keep reduced line spacing */
+    margin-left: -500px; 
+    line-height: 1.1; 
     text-align: left;
 }
 
@@ -169,28 +166,28 @@ main {
     justify-content: center;
     gap: 20px;
     position: absolute;
-    top: 58%; /* Keep buttons position */
-    left: 23%; /* Move buttons further left */
+    top: 58%; 
+    left: 23%; 
     transform: translateX(-50%);
 }
 
 .main-button {
     background-color: #FFF9EC;
     color: #033929;
-    border: 2px solid #033929; /* Green border */
-    padding: 16px 32px; /* Larger button size */
+    border: 2px solid #033929; 
+    padding: 16px 32px; 
     cursor: pointer;
-    font-size: 22px; /* Larger button text */
-    font-weight: 700; /* Bold font */
+    font-size: 22px; 
+    font-weight: 700; 
     border-radius: 35px;
     text-align: center;
-    margin-top: 35px; /* Increase space between text and buttons */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    margin-top: 35px;
+    transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
 .main-button:hover {
-    background-color: #033929; /* Change background to green */
-    color: #FFF9EC; /* Change text to white */
+    background-color: #033929;
+    color: #FFF9EC; 
 }
 
 .dog-image img {
@@ -279,18 +276,17 @@ a {
     border: 2px solid #033929;
 }
 
-/* Fix footer at the bottom */
 footer {
-    position: fixed; /* Make footer fixed */
-    bottom: 0; /* Stick to the bottom */
-    left: 0; /* Align to the left edge */
-    width: 100%; /* Full width */
-    background-color: #033929; /* Same color as header */
-    height: 100px; /* Footer height */
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    background-color: #033929; 
+    height: 100px; 
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #FFF9EC; /* Footer text color */
+    color: #FFF9EC; 
     font-size: 16px;
-    font-weight: 700; /* Bold footer text */
+    font-weight: 700; 
 }
