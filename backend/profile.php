@@ -2,7 +2,6 @@
 session_start();
 require 'db_connection.php';
 
-// Проверяем авторизацию
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.html");
     exit();
@@ -10,7 +9,6 @@ if (!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id'];
 
-// Получение текущих данных пользователя
 $query = "SELECT username, email FROM users WHERE user_id = ?";
 $stmt = $conn->prepare($query);
 $stmt->bind_param("i", $user_id);
@@ -18,12 +16,10 @@ $stmt->execute();
 $result = $stmt->get_result();
 $user = $result->fetch_assoc();
 
-// Обработка изменений профиля
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $new_username = trim($_POST['username']);
     $new_email = trim($_POST['email']);
 
-    // Проверка на существующий email или username
     $check_query = "SELECT user_id FROM users WHERE (email = ? OR username = ?) AND user_id != ?";
     $check_stmt = $conn->prepare($check_query);
     $check_stmt->bind_param("ssi", $new_email, $new_username, $user_id);
@@ -33,14 +29,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($check_stmt->num_rows > 0) {
         $error = "Имя пользователя или Email уже заняты.";
     } else {
-        // Обновление данных пользователя
         $update_query = "UPDATE users SET username = ?, email = ? WHERE user_id = ?";
         $update_stmt = $conn->prepare($update_query);
         $update_stmt->bind_param("ssi", $new_username, $new_email, $user_id);
 
         if ($update_stmt->execute()) {
             $success = "Данные успешно обновлены.";
-            $_SESSION['username'] = $new_username; // Обновляем сессионное имя пользователя
+            $_SESSION['username'] = $new_username; // обновление сессионного имени польз-ля
         } else {
             $error = "Ошибка обновления данных.";
         }

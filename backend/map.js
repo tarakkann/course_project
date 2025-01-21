@@ -129,3 +129,27 @@ function loadParkDetails(parkId, latitude, longitude) {
 }
 
 ymaps.ready(init);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const reviewForm = document.getElementById('review-form'); 
+    if (reviewForm) {
+        reviewForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(reviewForm);
+            fetch('/backend/submit_review.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    alert(data.error);
+                } else {
+                    alert('Отзыв успешно добавлен!');
+                }
+            })
+            .catch(error => console.error('Ошибка:', error));
+        });
+    }
+    init(); 
+});

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -6,13 +7,15 @@
     <title>Форма отзыва</title>
     <style>
         #review-form {
-            display: none; /* Скрываем форму по умолчанию */
+            display: none;
         }
     </style>
+    <script src="/backend/review.js"></script>
+
 </head>
 <body>
     <h2>Оставьте свой отзыв</h2>
-    <form id="review-form" action="/backend/submit_review.php" method="POST">
+    <form id="review-form"  method="POST">
         <label for="dog_type">Тип собаки:</label>
         <select id="dog_type" name="dog_type">
             <option value="small">Маленькая</option>
@@ -34,7 +37,9 @@
         <input type="hidden" id="latitude" name="latitude">
         <input type="hidden" id="longitude" name="longitude">
 
-        <button type="submit">Отправить отзыв</button>
+        <button type="submitform">Отправить отзыв</button>
     </form>
+    
 </body>
+
 </html>

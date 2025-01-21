@@ -6,7 +6,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = trim($_POST['email']);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-    // Проверка на существующий username
     $checkUsernameQuery = "SELECT user_id FROM users WHERE username = ?";
     $stmt = $conn->prepare($checkUsernameQuery);
     $stmt->bind_param("s", $username);
@@ -18,7 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit();
     }
 
-    // Проверка на существующий email
     $checkEmailQuery = "SELECT user_id FROM users WHERE email = ?";
     $stmt = $conn->prepare($checkEmailQuery);
     $stmt->bind_param("s", $email);
@@ -30,7 +28,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit();
     }
 
-    // Добавление нового пользователя
     $insertQuery = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($insertQuery);
     $stmt->bind_param("sss", $username, $email, $password);
