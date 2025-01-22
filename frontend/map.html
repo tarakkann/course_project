@@ -25,25 +25,30 @@
         </nav>
     </header>
     <div id="mapcontent">
-    <form id="form">
+        <div id="filter-section">
+            <h3>Фильтры</h3>
         <label for="dog-type">Тип собаки:</label>
-        <select id="dog-type" name="dog_type">
-            <option value="">Любой</option>
+        <select id="dog-type">
+            <option value="">Все</option>
             <option value="Маленькая">Маленькая</option>
             <option value="Средняя">Средняя</option>
             <option value="Большая">Большая</option>
-        </select>
-    
+        </select><br>
+
         <label for="rating-range">Рейтинг:</label>
-        <select id="rating-range" name="rating_range">
-            <option value="">Любой</option>
+        <select id="rating-range">
+            <option value="">Все</option>
             <option value="1-2">1-2</option>
+            <option value="2-3">2-3</option>
             <option value="3-4">3-4</option>
-            <option value="5">5</option>
-        </select>
-    
-        <button type="button" onclick="filterParks()">Фильтровать</button>
-    </form>
+            <option value="4-5">4-5</option>
+        </select><br>
+
+        <h4>Элементы площадки:</h4>
+        <select id="elements-select" multiple>
+        </select><br>
+        <button onclick="filterParks()">Применить фильтры</button>
+    </div>
     
 
     <div id="map" style="width: 900px; height: 700px;"></div>
@@ -54,4 +59,3 @@
     </footer>
 </body>
 </html>
-
