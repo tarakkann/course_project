@@ -351,18 +351,19 @@ footer {
     font-weight: 700; 
 }
 
+
 .second-screen {
     background-color: #033929;
-    padding: 50px 100px; /* Padding around the section */
+    padding: 50px 100px; 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns for the first row */
-    grid-template-rows: 400px 300px; /* Larger row heights */
-    gap: 25px; /* Space between blocks */
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 400px 300px; 
+    gap: 25px; 
     justify-content: center;
     align-items: center;
     text-align: center;
     font-size: 45px;
-    height: 100vh; /* Full-screen height */
+    height: 100vh; 
 }
 
 .row1-block1 {
@@ -377,32 +378,27 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
 }
-
 .row1-block1 img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
-
 .row1-block2 {
     grid-column: 2;
     grid-row: 1;
     background-color: #FFF9EC;
-    
-    color: #033929; /* Dark green text */
-    font-size: 40px; /* Larger font size for emphasis */
-    font-weight: 900; /* Extra bold text */
-    text-align: left; /* Align text to the left */
-    padding: 20px 30px; /* Add padding for spacing */
+    color: #033929; 
+    font-size: 40px;
+    font-weight: 900; 
+    text-align: left;
+    padding: 20px 30px; 
     display: flex;
-    justify-content: flex-start; /* Align content to the left */
-    align-items: center; /* Vertically center the text */
+    justify-content: flex-start; 
+    align-items: center; 
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    height: 428px; /* Ensure the height matches row1-block1 */
+    height: 428px; 
 }
-
 .row1-block3 {
     grid-column: 3;
     grid-row: 1;
@@ -410,19 +406,17 @@ footer {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    position: relative; /* Establish a stacking context */
-    transform: translateY(139px); /* Move the block down by 120px */
-    z-index: 10; /* Keep this on a higher z-layer if needed */
+    position: relative; 
+    transform: translateY(139px); 
+    z-index: 10;
 }
-
 .row1-block3 img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image fills the block */
+    object-fit: cover;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for styling */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
-/* Row 2 Block 1 */
 .row2-block1 {
     grid-column: 1;
     grid-row: 2;
@@ -435,8 +429,6 @@ footer {
     align-items: center;
     border-radius: 15px;
 }
-
-/* Row 2 Block 1 */
 .row2-block1 {
     grid-column: 1;
     grid-row: 2;
@@ -449,10 +441,8 @@ footer {
     align-items: center;
     border-radius: 15px;
 }
-
-/* Row 2 Block 2 (now third block) */
 .row2-block2 {
-    grid-column: 3; /* Move this block to the third column */
+    grid-column: 3; 
     grid-row: 2;
     background-color: #EC4C0E;
     display: flex;
@@ -460,15 +450,13 @@ footer {
     align-items: center;
     border-radius: 15px;
 }
-
 .row2-block2 img {
     max-width: 80%;
     height: auto;
 }
 
-/* Row 2 Block 3 (now second block) */
 .row2-block3 {
-    grid-column: 2; /* Move this block to the second column */
+    grid-column: 2; 
     grid-row: 2;
     background-color: #033929;
     color: #FFF9EC;
@@ -482,14 +470,46 @@ footer {
 
 @media (min-width: 1200px) {
     .second-screen {
-        grid-template-columns: 1fr 1fr 1fr; /* Add a third column for Row 2 */
+        grid-template-columns: 1fr 1fr 1fr; 
     }
-
     .row2-block1,
     .row2-block2,
     .row2-block3 {
         height: 300px;
     }
+}
+
+
+.form-group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+}
+
+.form-group input {
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background: none;
+    border-radius: 5px;
+}
+
+.form-group label {
+    position: absolute;
+    top: 0;
+    padding: 15px 0;
+    font-size: 15px;
+    font-weight: 400;
+    color: #9b9b9b;
+    transition: all 0.2s;
+    pointer-events: none;
+}
+
+.form-group input:focus ~ label,
+.form-group input:valid ~ label {
+    top: -20px;
+    font-size: 13px;
+    color: #033929;
 }
 
 
