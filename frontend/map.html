@@ -16,7 +16,7 @@
         <nav>
             <ul>
                 <a href="index.html"" class="main-button-link">
-                    <button class="header-button">Выйти</button>
+                    <button class="header-button">Выйти на главную</button>
                 </a> 
                 <a href="/backend/profile.php" class="main-button-link">
                     <button class="header-button">Профиль</button>
@@ -26,7 +26,7 @@
     </header>
     <div id="mapcontent">
         <div id="filter-section">
-            <h3>Фильтры</h3>
+            <h3>Настроить фильтры</h3>
         <label for="dog-type">Тип собаки:</label>
         <select id="dog-type">
             <option value="">Все</option>
@@ -46,6 +46,7 @@
 
         <h4>Элементы площадки:</h4>
         <select id="elements-select" multiple>
+            <option value="">Без выбора</option>
         </select><br>
         <button onclick="filterParks()">Применить фильтры</button>
     </div>

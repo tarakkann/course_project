@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
         <div class="header-buttons">
             <a href="/frontend/map.html" class="main-button-link">
-                <button class="header-button">Карта</button>
+                <button class="header-button">Карта площадок для выгула</button>
             </a>        
             <a href="logout.php" class="main-button-link">
                 <button class="header-button">Выход</button>

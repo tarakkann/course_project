@@ -85,6 +85,60 @@ main {
     justify-content: center;
     align-items: center;
 }
+.tagline {
+    font-size: 110px; 
+    font-weight: 800; 
+    color: #033929;
+    margin-left: -500px; 
+    line-height: 1.1; 
+    text-align: left;
+}
+
+.subtitle {
+    font-size: 28px;
+    font-weight: 700;
+    color: #033929;
+    text-align: center; 
+    margin-bottom: 150px; 
+    margin-left: -500px; 
+}
+
+.main-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: absolute;
+    top: 58%; 
+    left: 23%; 
+    transform: translateX(-50%);
+}
+
+.main-button {
+    background-color: #FFF9EC;
+    color: #033929;
+    border: 2px solid #033929; 
+    padding: 16px 32px; 
+    cursor: pointer;
+    font-size: 22px; 
+    font-weight: 700; 
+    border-radius: 35px;
+    text-align: center;
+    margin-top: 35px;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.main-button:hover {
+    background-color: #033929;
+    color: #FFF9EC; 
+}
+
+.dog-image img {
+    max-width: 50%;
+    height: auto;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
 
 
 #profile-page {
@@ -151,60 +205,6 @@ main {
     border-radius: 10px; 
 }
 
-.tagline {
-    font-size: 110px; 
-    font-weight: 800; 
-    color: #033929;
-    margin-left: -500px; 
-    line-height: 1.1; 
-    text-align: left;
-}
-
-.subtitle {
-    font-size: 28px; /* Slightly smaller font than tagline */
-    font-weight: 700; /* Bold text */
-    color: #033929;
-    text-align: center; /* Center-align text */
-    margin-bottom: 150px; /* Space below subtitle for buttons */
-    margin-left: -500px; 
-}
-
-.main-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    position: absolute;
-    top: 58%; 
-    left: 23%; 
-    transform: translateX(-50%);
-}
-
-.main-button {
-    background-color: #FFF9EC;
-    color: #033929;
-    border: 2px solid #033929; 
-    padding: 16px 32px; 
-    cursor: pointer;
-    font-size: 22px; 
-    font-weight: 700; 
-    border-radius: 35px;
-    text-align: center;
-    margin-top: 35px;
-    transition: background-color 0.3s ease, color 0.3s ease; 
-}
-
-.main-button:hover {
-    background-color: #033929;
-    color: #FFF9EC; 
-}
-
-.dog-image img {
-    max-width: 50%;
-    height: auto;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-}
 
 form {
     background-color: white;
