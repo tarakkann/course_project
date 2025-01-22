@@ -85,10 +85,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <h1>Профиль</h1>
         <p>Добро пожаловать, <strong><?php echo htmlspecialchars($user['username']); ?></strong>!</p>
         <form id="profile-form" method="POST" action="profile.php">
-            <label for="username">Имя пользователя:</label>
-            <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($user['username']); ?>" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" required>
+        <div class="form-group">
+        <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($user['username']); ?>" required>
+        <label for="username"> Имя пользователя</label>
+        </div>
+        
+        <div class="form-group">
+        <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" required>
+        <label> email@example.com</label>
+        </div>
+
             <button type="submit">Обновить</button>
         </form>
         <?php if (isset($success)): ?>
