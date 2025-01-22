@@ -1,77 +1,3 @@
-// var myMap; 
-
-// function init() {
-//     myMap = new ymaps.Map("map", {
-//         center: [55.8, 37.66],
-//         zoom: 10
-//     });
-
-//     fetchParks();  
-// }
-
-// function fetchParks(dogType = "", ratingRange = "", elements = []) {
-//     console.log(`Запрос на сервер с dog_type=${dogType}, rating_range=${ratingRange}, elements=${elements.join(",")}`);
-
-//     myMap.geoObjects.removeAll();
-
-//     const elementsQuery = elements.map(encodeURIComponent).join(',');
-//     fetch(`/backend/filter.php?dog_type=${dogType}&rating_range=${ratingRange}&elements=${elementsQuery}`)
-//     .then(response => response.json())
-//     .then(parks => {
-//         console.log('Получены данные о парках:', parks);
-
-//         if (parks.length === 0) {
-//             console.log('Нет парков, удовлетворяющих фильтрам');
-//             alert('Нет площадок, соответствующих фильтрам.');
-//         }
-
-//         parks.forEach(park => {
-//             const placemark = new ymaps.Placemark(
-//                 [park.latitude, park.longitude], 
-//                 { balloonContent: `<strong>Локация:</strong> ${park.Location}` },
-//                 {
-//                     iconLayout: 'default#image',
-//                     iconImageHref: '/assets/images/island.png',
-//                     iconImageSize: [40, 40],
-//                     iconImageOffset: [-20, -20]
-//                 }
-//             );
-
-//             placemark.events.add('click', () => {
-//                 loadParkDetails(park.global_id, park.latitude, park.longitude);
-//             });
-
-//             myMap.geoObjects.add(placemark); 
-//         });
-//     })
-//     .catch(error => {
-//         console.error('Ошибка загрузки площадок:', error);
-//         alert('Ошибка при загрузке данных');
-//     });
-// }
-
-// function filterParks() {
-//     const dogType = document.getElementById('dog-type').value;
-//     const ratingRange = document.getElementById('rating-range').value;
-//     const elements = Array.from(document.querySelectorAll('input[name="elements"]:checked')).map(el => el.value);
-
-//     console.log(`Выбрано: dog_type=${dogType}, rating_range=${ratingRange}, elements=${elements.join(",")}`);
-
-//     fetchParks(dogType, ratingRange, elements);
-// }
-
-// function loadParkDetails(parkId, latitude, longitude) {
-//     fetch(`/backend/get_park_details.php?id=${parkId}`)
-//         .then(response => response.json())
-//         .then(data => {
-//             if (data.error) {
-//                 alert(`Ошибка: ${data.error}`);
-//                 return;
-//             }
-
-//             const elements = data.elements && data.elements.length > 0
-//                 ? data.elements.join(', ')
-//                 : 'Элементы не указаны';
 var myMap; 
 
 function init() {
@@ -80,7 +6,7 @@ function init() {
         zoom: 10
     });
 
-    loadElements(); // Load unique elements dynamically
+    loadElements();
     fetchParks();  
 }
 
@@ -217,30 +143,28 @@ function loadParkDetails(parkId, latitude, longitude) {
                     }
                 
                 
-                    function handleSubmitReviewForm(event) {
-                        event.preventDefault(); 
-                    
-                        const form = event.target;
-                        const formData = new FormData(form);
-                    
-                        fetch('/backend/submit_review.php', {
-                            method: 'POST',
-                            body: formData,
-                        })
-                        .then(response => response.json())
-                        .then(result => {
-                            if (result.success) {
-                                alert('Отзыв успешно отправлен!');
-                                form.reset(); // сбрасываем форму
-                            } else {
-                                alert(`Ошибка: ${result.error}`);
-                            }
-                        })
-                        .catch(error => {
-                            console.error('Ошибка отправки отзыва:', error);
-                            alert('Произошла ошибка при отправке отзыва.');
-                        });
+    function handleSubmitReviewForm(event) {
+        event.preventDefault(); 
+        const form = event.target;
+        const formData = new FormData(form);
+        fetch('/backend/submit_review.php', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(result => {
+            if (result.success) {
+                alert('Отзыв успешно отправлен!');
+                form.reset(); // сбрасываем форму
+                    } else {
+                        alert(`Ошибка: ${result.error}`);
                     }
+                })
+                .catch(error => {
+                    console.error('Ошибка отправки отзыва:', error);
+                    alert('Произошла ошибка при отправке отзыва.');
+                });
+            }
                     
                 
-                ymaps.ready(init);
+ymaps.ready(init);
