@@ -43,20 +43,23 @@
     </header>
     <p id="error-message"></p>
     <form action="/backend/register.php" method="POST">
+
+        <label for="username">Введите имя пользователя</label>
         <div class="form-group">
             <input type="text" name="username" id="username" required>
-            <label for="username"> Имя пользователя</label>
+            <label for="username"> имя пользователя</label>
         </div>
 
+        <label for="email">Введите email</label>
         <div class="form-group">
             <input type="email" name="email" required>
             <label> email@example.com</label>
         </div>
 
-
+        <label for="password">Введите пароль</label>
         <div class="form-group">
             <input type="password" name="password" required>
-            <label> Введите пароль</label>
+            <label> введите пароль</label>
         </div>
 
         <button type="submit">Зарегистрироваться</button>

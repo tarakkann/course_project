@@ -39,15 +39,17 @@
     </header>
     <p id="error-message"></p>
     <form action="/backend/login.php" method="POST">
+
+        <label for="email">введите email</label>
         <div class="form-group">
             <input type="email" name="email" required>
             <label> email@example.com</label>
         </div>
 
-
+        <label for="password">Введите пароль</label>
         <div class="form-group">
             <input type="password" name="password" required>
-            <label> Введите пароль</label>
+            <label> введите пароль</label>
         </div>
         <button type="submit">Войти</button>
     </form>
