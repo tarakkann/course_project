@@ -12,6 +12,17 @@ body, html {
     font-family: 'Jost', sans-serif;
     background-color: #FFF9EC;
 }
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+.content {
+	flex: 1 0 auto;
+}
+.footer {
+	flex: 0 0 auto;
+}
 
 
 h1 {
@@ -360,6 +371,7 @@ main {
     align-items: flex-start;
     margin: 20px;
     gap: 20px; 
+    
 }
 
 #map {
@@ -367,6 +379,7 @@ main {
     height: 600px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     border-radius: 10px; 
+    
 }
 
 
@@ -997,20 +1010,6 @@ main {
 }
 
 
-#mapcontent {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin: 20px;
-    gap: 20px; 
-}
-
-#map {
-    width: 50%; 
-    height: 600px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    border-radius: 10px; 
-}
 
 
 form {
@@ -1196,11 +1195,14 @@ footer {
 }
 
 
+
 #reviews-page {
     font-family: 'Jost', sans-serif;
     background-color: #FFF9EC;
     color: #033929;
     padding: 20px;
+    min-height: 150vh; /* Высота страницы как минимум равна высоте экрана */
+    padding-bottom: 50px
 }
 
 #reviews-page h1 {

@@ -19,16 +19,13 @@ $dogType = $_POST['dog_type'];
 $rating = intval($_POST['rating']);
 $reviewText = $_POST['review_text'];
 
-$query = "INSERT INTO reviews (park_id, dog_type, rating, review_text) VALUES (?, ?, ?, ?)";
+$query = "INSERT INTO reviews (user_id, park_id, dog_type, rating, review_text) VALUES (?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($query);
-$stmt->bind_param("isis", $parkId, $dogType, $rating, $reviewText);
-$stmt->execute();
+$stmt->bind_param("iisss", $_SESSION['user_id'], $parkId, $dogType, $rating, $reviewText);
 
-if ($stmt->affected_rows > 0) {
-    echo json_encode(["success" => "Отзыв успешно добавлен."]);
+if ($stmt->execute()) {
+    echo json_encode(["success" => true, "message" => "Отзыв успешно добавлен."]);
 } else {
     echo json_encode(["error" => "Ошибка при добавлении отзыва."]);
 }
-
-$conn->close();
 ?>

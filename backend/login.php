@@ -1,10 +1,11 @@
 <?php
+session_start();
 require 'db_connection.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = trim($_POST['email']);
     $password = $_POST['password'];
-
+    
     // проверка на существующий имейл
     $query = "SELECT user_id, username, password FROM users WHERE email = ?";
     $stmt = $conn->prepare($query);
