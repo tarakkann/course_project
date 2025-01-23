@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <script src="/backend/review.js" defer></script>
+
+    <meta charset="UTF-8">
+    <title>Отзывы о площадках</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+<div id="reviews-page" class="container">
+    <h1>Отзывы о площадках для собак</h1>
+
+    <form id="park-form">
+        <label for="park_id">Выберите площадку:</label>
+        <select name="park_id" id="park_id">
+            <option value="">-- Выберите --</option>
+        </select>
+        <button type="submit">Показать</button>
+    </form>
+
+    <div id="results"></div>
+</div>
+</body>
+</html>
