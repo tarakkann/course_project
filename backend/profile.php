@@ -3,7 +3,7 @@ session_start();
 require 'db_connection.php';
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.html");
+    header("Location: /frontend/login.html");
     exit();
 }
 
@@ -71,9 +71,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
 
     <div class="header-nav">
-        <a href="/frontend/login.html" class="header-button">Главная</a>
+        <a href="/frontend/index.html" class="header-button">Главная</a>
         <a href="/frontend/map.html" class="header-button">Карта</a>
         <a href="/backend/profile.php" class="header-button active">Профиль</a>
+        <a href="/frontend/reviews_page.html" class="header-button">Отзывы</a>
     </div>
 
     <div class="header-buttons">
