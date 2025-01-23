@@ -21,26 +21,28 @@
     </script>
 </head>
 <body>
+
     <header>
         <div class="logo">
-            <img src="/assets/images/Logo.svg" alt="PetMap Logo"> 
-        </div>
-        <div class="header-logo">
-            <h1>Вход</h1>
-        </div>
-        <div class="header-buttons">
-            <a href="index.html" class="main-button-link">
-                <button class="header-button">Главная</button>
-            </a>        
-            <a href="register.html" class="main-button-link">
-                <button class="header-button">Регистрация</button>
-            </a>
-        </div>
-    </header>
+                <img src="../assets/images/Logo.svg" alt="PetMap Logo">
+                <span class="site-name">PetMap</span>
+            </div>
+        
+            <div class="header-nav">
+                <a href="index.html" class="header-button">Главная</a>
+            </div>
+        
+            <div class="header-buttons">
+                <a href="login.html" class="header-button active">Вход</a>
+                <a href="register.html" class="header-button">Регистрация</a>
+            </div>
+        </header>
+
+    <h2 id="login-title">Вход</h2>
+    
     <p id="error-message"></p>
     <form action="/backend/login.php" method="POST">
-
-        <label for="email">введите email</label>
+        <label for="email">Введите email</label>
         <div class="form-group">
             <input type="email" name="email" required>
             <label> email@example.com</label>
@@ -53,13 +55,15 @@
         </div>
         <button type="submit">Войти</button>
     </form>
+
     <div class="register-link">
         <a href="register.html" class="main-button-link">Нет аккаунта? Зарегистрироваться</a>
     </div>
 
-     <footer>
+    <footer>
         PetMap © 2025. Все права защищены.
-        С использование открытых данных :  <p><a href="https://data.mos.ru/opendata/2663?isDynamic=false">  ссылка на датасет</a></p>
+        С использование открытых данных:  &nbsp;<p><a href="https://data.mos.ru/opendata/2663?isDynamic=false">  ссылка на датасет</a></p>
     </footer>
+    
 </body>
 </html>

@@ -12,21 +12,46 @@
 </head>
 <body>
     <header>
-        <h1>Карта площадок для выгула собак</h1>
-        <nav>
-            <ul>
-                <a href="index.html"" class="main-button-link">
-                    <button class="header-button">Выйти на главную</button>
-                </a> 
-                <a href="/backend/profile.php" class="main-button-link">
-                    <button class="header-button">Профиль</button>
-                </a>        
-            </ul>
-        </nav>
-    </header>
+    <div class="logo">
+        <img src="../assets/images/Logo.svg" alt="PetMap Logo">
+        <span class="site-name">PetMap</span>
+    </div>
+
+    <div class="header-nav">
+        <a href="index.html" class="header-button">Главная</a>
+        <a href="map.html" class="header-button active">Карта</a>
+        <a href="/backend/profile.php" class="header-button">Профиль</a>
+    </div>
+
+    <div class="header-buttons">
+        <a href="/backend/logout.php" class="header-button">Выход</a>
+    </div>
+</header>
+
+<h2 id="login-title">Карта для целевого подбора площадок для выгула собак</h2>
+
+
     <div id="mapcontent">
+        
+
+    <div>
+        <h3>Здесь вы можете настроить фильтры <br>
+            и найти подходящие вам и вашему питомцу <br>
+            площадки для выгула!<br>&nbsp;
+        </h3>
+        
+        <p1>
+            На интерактивной карте отмечены популярные площадки, <br>которые содержат рейтинги и отзывы от других пользователей. 
+            <br>
+        </p1>
+        
+    </div>
+
+    <div id="map"></div>
+
+    <div>
         <div id="filter-section">
-            <h3>Настроить фильтры</h3>
+        <h3>Настроить фильтры</h3>
         <label for="dog-type">Тип собаки:</label>
         <select id="dog-type">
             <option value="">Все</option>
@@ -50,13 +75,25 @@
         </select><br>
         <button onclick="filterParks()">Применить фильтры</button>
     </div>
-    
 
-    <div id="map" style="width: 900px; height: 700px;"></div>
     </div>
-    <footer>
-        PetMap © 2025. Все права защищены.
-        С использование открытых данных :  <p><a href="https://data.mos.ru/opendata/2663?isDynamic=false">  ссылка на датасет</a></p>
-    </footer>
+</div>
+
+<div id="description-section">
+    <h2>Описание</h2>
+    <p>
+        Карта площадок для выгула собак создана для удобства пользователей. 
+        Здесь можно найти площадки, подходящие для любых пород собак, и настроить фильтры в зависимости от ваших потребностей.
+    </p>
+    <p>
+        На карте отмечены популярные площадки, которые содержат рейтинги и отзывы от других пользователей. 
+        Если у вас есть предложения по улучшению, мы всегда рады вашим отзывам.
+    </p>
+</div>
+
 </body>
+<footer>
+        PetMap © 2025. Все права защищены.
+        С использование открытых данных:  &nbsp;<p><a href="https://data.mos.ru/opendata/2663?isDynamic=false">  ссылка на датасет</a></p>
+</footer>
 </html>

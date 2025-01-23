@@ -92,14 +92,14 @@ function loadParkDetails(parkId, latitude, longitude) {
                 : 'Элементы не указаны';
 
                 let content = `
-                                <div>
-                                    <h3>Площадка №${data.id}</h3>
-                                    <p><strong>Адрес:</strong> ${data.address}</p>
-                                    <p><strong>Округ:</strong> ${data.adm_area}, ${data.district}</p>
-                                    <p><strong>Площадь:</strong> ${data.area} м²</p>
-                                    <p><strong>Освещение:</strong> ${data.lighting}</p>
-                                    <p><strong>Ограждение:</strong> ${data.fencing}</p>
-                                    <p><strong>Элементы:</strong> ${elements}</p>
+                                <div id="park-info">
+                                <h3>Площадка №${data.id}</h3>
+                                <p><strong>Адрес:</strong> ${data.address}</p>
+                                <p><strong>Округ:</strong> ${data.adm_area}, ${data.district}</p>
+                                <p><strong>Площадь:</strong> ${data.area} м²</p>
+                                <p><strong>Освещение:</strong> ${data.lighting}</p>
+                                <p><strong>Ограждение:</strong> ${data.fencing}</p>
+                                <p><strong>Элементы:</strong> ${elements}</p>
                                 </div>
                                 <div id="review-section">
                                     <h4>Оставить отзыв</h4>

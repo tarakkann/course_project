@@ -65,24 +65,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </style>
 <body>
 <header>
-        <div class="logo">
-            <img src="/assets/images/Logo.svg" alt="PetMap Logo"> 
-        </div>
-        <div class="header-logo">
-            <h1>Профиль</h1>
-        </div>
-        <div class="header-buttons">
-            <a href="/frontend/map.html" class="main-button-link">
-                <button class="header-button">Карта площадок для выгула</button>
-            </a>        
-            <a href="logout.php" class="main-button-link">
-                <button class="header-button">Выход</button>
-            </a>
-        </div>
-    </header>
+    <div class="logo">
+        <img src="../assets/images/Logo.svg" alt="PetMap Logo">
+        <span class="site-name">PetMap</span>
+    </div>
+
+    <div class="header-nav">
+        <a href="/frontend/login.html" class="header-button">Главная</a>
+        <a href="/frontend/map.html" class="header-button">Карта</a>
+        <a href="/backend/profile.php" class="header-button active">Профиль</a>
+    </div>
+
+    <div class="header-buttons">
+        <a href="/backend/logout.php" class="header-button">Выход</a>
+    </div>
+</header>
 
     <main id="profile-page">
-        <h1>Профиль</h1>
+        <h1>Редактировать профиль</h1>
         <p>Добро пожаловать, <strong><?php echo htmlspecialchars($user['username']); ?></strong>!</p>
         <form id="profile-form" method="POST" action="profile.php">
         <div class="form-group">
@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <label> email@example.com</label>
         </div>
 
-            <button type="submit">Обновить</button>
+            <button type="submit">Отредактировать</button>
         </form>
         <?php if (isset($success)): ?>
             <p style="color: green;"><?php echo $success; ?></p>
@@ -103,9 +103,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <p style="color: red;"><?php echo $error; ?></p>
         <?php endif; ?>
     </main>
+
     <footer>
-        PetMap © 2025. Все права защищены
-        С использование открытых данных :  <p><a href="https://data.mos.ru/opendata/2663?isDynamic=false">  Датасет</a></p>
+        PetMap © 2025. Все права защищены.
+        С использование открытых данных:  &nbsp;<p><a href="https://data.mos.ru/opendata/2663?isDynamic=false">  ссылка на датасет</a></p>
     </footer>
+
 </body>
 </html>

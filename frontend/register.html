@@ -25,22 +25,24 @@
     </script>
 </head>
 <body>
+
     <header>
-        <div class="logo">
-            <img src="/assets/images/Logo.svg" alt="PetMap Logo"> 
+    <div class="logo">
+            <img src="../assets/images/Logo.svg" alt="PetMap Logo">
+            <span class="site-name">PetMap</span>
         </div>
-    <div class="header-logo">
-        <h1>Регистрация</h1>
-    </div>
-    <div class="header-buttons">
-        <a href="index.html" class="main-button-link">
-            <button class="header-button">Главная</button>
-        </a>        
-        <a href="login.html" class="main-button-link">
-            <button class="header-button">Вход</button>
-        </a>
-    </div>
+    
+        <div class="header-nav">
+            <a href="index.html" class="header-button">Главная</a>
+        </div>
+    
+        <div class="header-buttons">
+            <a href="login.html" class="header-button">Вход</a>
+            <a href="register.html" class="header-button active">Регистрация</a>
+        </div>
     </header>
+
+    <h2 id="login-title">Регистрация</h2>
     <p id="error-message"></p>
     <form action="/backend/register.php" method="POST">
 
@@ -70,8 +72,8 @@
 </body>
 
 <footer>
-    PetMap © 2025. Все права защищены
-    С использование открытых данных :  <p><a href="https://data.mos.ru/opendata/2663?isDynamic=false">  Датасет</a></p>
+    PetMap © 2025. Все права защищены.
+    С использование открытых данных:  &nbsp;<p><a href="https://data.mos.ru/opendata/2663?isDynamic=false">  ссылка на датасет</a></p>
 </footer>
 
 </html>
